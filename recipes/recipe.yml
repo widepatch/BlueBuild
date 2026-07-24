@@ -1,4 +1,3 @@
----
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
 name: bluebuild
@@ -19,6 +18,10 @@ modules:
         destination: /
 
   - type: dnf
+    repos:
+      copr:
+        - fmonteghetti/keyd
+      nonfree: rpmfusion
     remove:
       packages:
         - firefox
@@ -39,11 +42,18 @@ modules:
         - flatpak-builder
         - trash-cli
         - sshfs
+        - keyd
+
   - type: dnf
     repos:
       nonfree: rpmfusion
     install:
       packages:
         - libva-intel-driver
+
+  - type: systemd
+    system:
+      enabled:
+        - keyd
 
   - type: signing # sets up policy & signing files for signed images
