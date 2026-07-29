@@ -43,7 +43,7 @@ modules:
         - trash-cli
         - sshfs
         - keyd
-
+        - podman-compose
   - type: dnf
     repos:
       nonfree: rpmfusion
