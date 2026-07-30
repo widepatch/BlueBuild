@@ -44,6 +44,7 @@ modules:
         - sshfs
         - keyd
         - podman-compose
+        - nmap
   - type: dnf
     repos:
       nonfree: rpmfusion
