@@ -48,6 +48,8 @@ modules:
         - fzf
         - fd-find
         - bat
+        - tldr
+        - make
   - type: dnf
     repos:
       nonfree: rpmfusion
