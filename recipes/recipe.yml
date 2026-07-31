@@ -45,6 +45,9 @@ modules:
         - keyd
         - podman-compose
         - nmap
+        - fzf
+        - fd-find
+        - bat
   - type: dnf
     repos:
       nonfree: rpmfusion
